@@ -1,0 +1,7 @@
+Some ruby code for calculating swedish holidays.
+
+This list of holidays will include de facto (half and full) holidays as well as public holidays. 
+
+This means that midsummers eve will be listed as a holiday, as well as new years eve and christmas eve, maundy thursday (skärtorsdagen) and a few others. Full list "here":http://en.wikipedia.org/wiki/Public_holidays_in_Sweden#De_facto_full_holidays_.28.22Helgdag.22.29
+
+"holidays":http://github.com/alexdunae/holidays seems nice, but it doesn't seem to include de facto holidays.

@@ -1,0 +1,75 @@
+new_years_day: 
+  name: "Nyårsdagen"
+  conditions: lambda {|date| date.month == 1 && date.day == 1 }
+twelfth_night:
+  name: "Trettondagsafton"
+  de_facto: "half"
+  conditions: lambda {|date| date.month == 1 && date.day == 5}
+epiphany: 
+  name: "Trettondagen"
+  conditions: lambda {|date| date.month == 1 && date.day == 6}
+maundy_thursday:
+  name: "Skärtorsdagen"
+  de_facto: "half"
+  conditions: lambda {|date| Holidays.easter(date.year) - 3 == date }
+good_friday:
+  name: "Långfredagen"
+  conditions: lambda {|date| Holidays.easter(date.year) - 2 == date }
+holy_saturday:
+  name: "Påskafton"
+  de_facto: "half"
+  conditions: lambda {|date| Holidays.easter(date.year) - 1 == date }
+easter_sunday:
+  name: "Påskdagen"
+  conditions: lambda {|date| Holidays.easter(date.year) == date }
+easter_monday:
+  name: "Annandag påsk"
+  conditions: lambda {|date| Holidays.easter(date.year) + 1 == date }
+valborg:
+  name: "Valborgsmässoafton"
+  de_facto: "half"
+  conditions: lambda {|date| date.month == 4 && date.day == 30 }
+workers_day:
+  name: "Första maj"
+  conditions: lambda {|date| date.month == 5 && date.day == 1 }
+ascension_eve:
+  name: "Kristi himmelfärdsdag"
+  de_facto: "half"
+  conditions: lambda {|date| Holidays.easter(date.year) + 5*7 + 3 == date }
+ascension_day:
+  name: "Kristi himmelfärdsdag"
+  conditions: lambda {|date| Holidays.easter(date.year) + 5*7 + 4 == date }
+whitsunday:
+  name: "Pingstdagen"
+  conditions: lambda {|date| Holidays.easter(date.year) + 7*7 == date }
+national_day:
+  name: "Sveriges nationaldag"
+  conditions: lambda {|date| date.month == 6 && date.day == 6 }
+midsummers_eve:
+  name: "Midsommarafton"
+  de_facto: "full"
+  conditions: lambda {|date| date >= Date.new(date.year,6,20) && date <= Date.new(date.year,6,26) && date.wday == 5 }
+midsummers_day:
+  name: "Midsommardagen"
+  conditions: lambda {|date| date >= Date.new(date.year,6,20) && date <= Date.new(date.year,6,26) && date.wday == 6 }
+all_saints_eve:
+  name: "Allhelgonaafton"
+  de_facto: "half"
+  conditions: lambda {|date| date >= Date.new(date.year,10,31) && date <= Date.new(date.year,11,6) && date.wday == 5 }
+all_saints_day:
+  name: "Alla helgons dag"
+  conditions: lambda {|date| date >= Date.new(date.year,10,31) && date <= Date.new(date.year,11,6) && date.wday == 6 }
+christmas_eve:
+  name: "Julafton"
+  de_facto: "full"
+  conditions: lambda {|date| date.month == 12 && date.day == 24 }
+christmas_day:
+  name: "Juldagen"
+  conditions: lambda {|date| date.month == 12 && date.day == 25 }
+boxing_day:
+  name: "Annandag jul"
+  conditions: lambda {|date| date.month == 12 && date.day == 26 }
+new_years_eve:
+  name: "Nyårsafton"
+  de_facto: "full"
+  conditions: lambda {|date| date.month == 12 && date.day == 31 }
